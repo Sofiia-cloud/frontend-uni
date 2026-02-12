@@ -19,7 +19,7 @@ $font-stack: "Inter", system-ui, sans-serif;
 }
 
 .product-card {
-  @include card-shape;
+  @include card-shape(12px, 0 4px 10px rgba(0, 0, 0, 0.1));
 
   &__image {
     height: 400px;
