@@ -1,0 +1,83 @@
+$color-bg: #f9f7f5;
+$color-accent: #b38b6d;
+$color-text: #2e2e2e;
+$font-stack: "Inter", system-ui, sans-serif;
+
+@mixin card-shape($radius: 24px, $shadow: 0 12px 30px rgba(0, 0, 0, 0.05)) {
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.page {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: $font-stack;
+  color: $color-text;
+}
+
+.product-card {
+  @include card-shape;
+
+  &__image {
+    height: 400px;
+    background-color: #e6dbd2;
+    background-image: url("./birkin.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content {
+    padding: 24px;
+  }
+
+  &__title {
+    margin: 0 0 12px 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  &__desc {
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+    color: #4b4b4b;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-accent;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: $color-accent;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 40px;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+
+  &:hover {
+    background-color: darken($color-accent, 12%);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
